@@ -1018,6 +1018,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   controlSpeed: 25
+  xClampRange: 25
+  yClampRange: 15
+  yClampBuffer: 10
+  controlRollFactor: 30
+  rotationSpeed: 4
 --- !u!1 &1975055255
 GameObject:
   m_ObjectHideFlags: 0
