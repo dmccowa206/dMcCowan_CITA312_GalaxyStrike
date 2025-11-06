@@ -4,6 +4,14 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] GameObject destroyedFX;
     [SerializeField] int hitPoints = 3;
+    [SerializeField] GameObject player;
+    Scorer scorer;
+    int startingHP;
+    void Start()
+    {
+        scorer = player.GetComponent<Scorer>();
+        startingHP = hitPoints;
+    }
     void OnParticleCollision(GameObject other)
     {
         ProcessHit();
@@ -16,6 +24,7 @@ public class Enemy : MonoBehaviour
         {
             Instantiate(destroyedFX, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
+            scorer.GainScore(startingHP);
         }
     }
 }
